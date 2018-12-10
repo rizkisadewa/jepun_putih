@@ -64,8 +64,8 @@
 				<!-- Logo -->
 				<div class="navbar-brand">
 					<a href="index.html">
-						<img class="logo" src="../../properties/client/img/Jepunku-Logo-2.png" alt="logo">
-						<img class="logo-alt nav-center" src="../../properties/client/img/Jepunku-Logo.png" alt="logo">
+						<img class="logo" src="{{ url_for('static', filename='properties/client/img/Jepunku-Logo-2.png') }}" alt="logo">
+						<img class="logo-alt nav-center" src="{{ url_for('static', filename='properties/client/img/Jepunku-Logo.png') }}" alt="logo">
 					</a>
 				</div>
 				<!-- /Logo -->
@@ -171,10 +171,13 @@
 	<div id="testimonial" class="section md-padding">
 
 		<!-- Background Image -->
-		<div class="bg-img" style="background-image: url('../../properties/client/img/waerebo-traditional-village-tourku asia-min.jpg');">
+		<div class="bg-img" style="background-image: url('../../static/properties/client/img/waerebo-traditional-village-tourku asia-min.jpg');">
+
 			<div class="overlay"></div>
 		</div>
 		<!-- /Background Image -->
+
+
 
 		<!-- Container -->
 		<div class="container">
@@ -189,7 +192,7 @@
 						<!-- testimonial -->
 						<div class="testimonial">
 							<div class="testimonial-meta">
-								<img src="../../properties/client/img/rizki-sadewa-photo.jpg" alt="">
+								<img src="{{ url_for('static', filename='properties/client/img/rizki-sadewa-photo.jpg') }}" alt="">
 								<h3 class="white-text">Rizki Sadewa</h3>
 								<span>Travel Consultant</span>
 							</div>
@@ -200,7 +203,7 @@
 						<!-- testimonial -->
 						<div class="testimonial">
 							<div class="testimonial-meta">
-								<img src="../../properties/client/img/Dhimas Photo Profile.jpg" alt="">
+								<img src="{{ url_for('static', filename='properties/client/img/Dhimas Photo Profile.jpg') }}" alt="">
 								<h3 class="white-text">Dhimas Riski P.</h3>
 								<span>Travel Consultant</span>
 							</div>
@@ -312,7 +315,7 @@
 	<div id="testimonial" class="section md-padding">
 
 		<!-- Background Image -->
-		<div class="bg-img" style="background-image: url('../../properties/client/img/background/wakatobi.png');">
+		<div class="bg-img" style="background-image: url('../../static/properties/client/img/background/wakatobi.png');">
 			<div class="overlay"></div>
 		</div>
 		<!-- /Background Image -->
@@ -410,10 +413,10 @@
 				<!-- About slider -->
 				<div class="col-md-6">
 					<div id="about-slider" class="owl-carousel owl-theme">
-						<img class="img-responsive" src="../../properties/client/img/whychooseus/Banyumala-Jepunku-WhyChooseUs.jpg" alt="">
-						<img class="img-responsive" src="../../properties/client/img/whychooseus/Jatiluwih-Jepunku-WhyChooseUs.jpg" alt="">
-						<img class="img-responsive" src="../../properties/client/img/whychooseus/Kintamani-Jepunku-WhyChooseUs.jpg" alt="">
-						<img class="img-responsive" src="../../properties/client/img/whychooseus/Kintamani2-Jepunku-WhyChooseUs.jpg" alt="">
+						<img class="img-responsive" src="../../static/properties/client/img/whychooseus/Banyumala-Jepunku-WhyChooseUs.jpg" alt="">
+						<img class="img-responsive" src="../../static/properties/client/img/whychooseus/Jatiluwih-Jepunku-WhyChooseUs.jpg" alt="">
+						<img class="img-responsive" src="../../static/properties/client/img/whychooseus/Kintamani-Jepunku-WhyChooseUs.jpg" alt="">
+						<img class="img-responsive" src="../../static/properties/client/img/whychooseus/Kintamani2-Jepunku-WhyChooseUs.jpg" alt="">
 					</div>
 				</div>
 				<!-- /About slider -->
@@ -431,7 +434,7 @@
 	<div id="numbers" class="section sm-padding">
 
 		<!-- Background Image -->
-		<div class="bg-img" style="background-image: url('../../properties/client/img/background/jatiluwih-jepunku-background.png');">
+		<div class="bg-img" style="background-image: url('../../static/properties/client/img/background/jatiluwih-jepunku-background.png');">
 			<div class="overlay"></div>
 		</div>
 		<!-- /Background Image -->
@@ -510,7 +513,7 @@
 				<div class="col-sm-6">
 					<div class="team">
 						<div class="team-img">
-							<img class="img-responsive" src="../../properties/client/img/Dhimas Photo Profile.jpg" alt="">
+							<img class="img-responsive" src="{{ url_for('static', filename='properties/client/img/Dhimas Photo Profile.jpg') }}" alt="">
 							<div class="overlay">
 								<div class="team-social">
 									<a href="https://www.facebook.com/dhimas.riskipradana?jazoest=2651001211044890118988273114746685981177010349711081069081854811310010010081531019011978120105831005112177120122119586510011945738665107101861176950102867212086678482789510810766881149081106908777738010011911951827154518881"><i class="fa fa-facebook"></i></a>
@@ -530,7 +533,7 @@
 				<div class="col-sm-6">
 					<div class="team">
 						<div class="team-img">
-							<img class="img-responsive" src="../../properties/client/img/rizki-sadewa-jepunku-profile.jpg" alt="">
+							<img class="img-responsive" src="{{ url_for('static', filename='properties/client/img/rizki-sadewa-jepunku-profile.jpg') }}" alt="">
 							<div class="overlay">
 								<div class="team-social">
 									<a href="https://www.linkedin.com/in/rizki-sadewa-7b05ab64/"><i class="fa fa-linkedin"></i></a>
@@ -635,7 +638,7 @@
 
 					<!-- footer logo -->
 					<div class="footer-logo">
-						<a href="index.html"><img src="../../properties/client/img/Jepunku-Logo.png" alt="logo"></a>
+						<a href="index.html"><img src="{{ url_for('static', filename='properties/client/img/Jepunku-Logo.png') }}" alt="logo"></a>
 					</div>
 					<!-- /footer logo -->
 

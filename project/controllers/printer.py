@@ -10,7 +10,7 @@ class CreateForm(FlaskForm):
     text = StringField('name', validators=[DataRequired()])
 
 
-@app.route('/')
+@app.route('/printer')
 def start():
     return render_template('printer/index.html')
 

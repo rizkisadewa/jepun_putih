@@ -656,7 +656,7 @@ header {
 }
 .cb-slideshow:after {
     content: '';
-    background: transparent url(../img/background/pattern.png) repeat top left;
+    background: transparent url(../properties/client/img/background/pattern.png) repeat top left;
 }
 .cb-slideshow li span {
     width: 100%;
@@ -697,7 +697,7 @@ header {
     line-height: 120px;
     color: rgba(255,255,255,0.8);
 }
-.cb-slideshow li:nth-child(1) span { background-image: url(../img/background/1.jpg) }
+.cb-slideshow li:nth-child(1) span { background-image: url(../properties/client/img/background/1.jpg) }
 .cb-slideshow li:nth-child(2) span {
     background-image: url(../img/background/2.jpg);
     -webkit-animation-delay: 6s;
@@ -707,7 +707,7 @@ header {
     animation-delay: 6s;
 }
 .cb-slideshow li:nth-child(3) span {
-    background-image: url(../img/background/3.jpg);
+    background-image: url(../properties/client/img/background/3.jpg);
     -webkit-animation-delay: 12s;
     -moz-animation-delay: 12s;
     -o-animation-delay: 12s;
@@ -715,7 +715,7 @@ header {
     animation-delay: 12s;
 }
 .cb-slideshow li:nth-child(4) span {
-    background-image: url(../img/background/4.jpg);
+    background-image: url(../properties/client/img/background/4.jpg);
     -webkit-animation-delay: 18s;
     -moz-animation-delay: 18s;
     -o-animation-delay: 18s;
@@ -723,7 +723,7 @@ header {
     animation-delay: 18s;
 }
 .cb-slideshow li:nth-child(5) span {
-    background-image: url(../img/background/5.jpg);
+    background-image: url(../properties/client/img/background/5.jpg);
     -webkit-animation-delay: 24s;
     -moz-animation-delay: 24s;
     -o-animation-delay: 24s;
@@ -731,7 +731,7 @@ header {
     animation-delay: 24s;
 }
 .cb-slideshow li:nth-child(6) span {
-    background-image: url(../img/background/6.jpg);
+    background-image: url(../properties/client/img/background/6.jpg);
     -webkit-animation-delay: 30s;
     -moz-animation-delay: 30s;
     -o-animation-delay: 30s;
@@ -1188,7 +1188,7 @@ header {
 
 .service-dps:after {
     content: "";
-    background-image: url(../img/Banner-Bali-Tampak-Siring.jpg);
+    background-image: url(../properties/client/img/Banner-Bali-Tampak-Siring.jpg);
     position: absolute;
     left: 0;
     top: 0;
@@ -1200,7 +1200,7 @@ header {
 }
 
 .service-dps:hover:after {
-    background-image: url(../img/Banner-Bali-Tampak-Siring.jpg);
+    background-image: url(../properties/client/img/Banner-Bali-Tampak-Siring.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -1244,7 +1244,7 @@ header {
 
 .service-jog:after {
     content: "";
-    background-image: url(../img/Banner-Yogya-Borobudur.jpg);
+    background-image: url(../properties/client/img/Banner-Yogya-Borobudur.jpg);
     position: absolute;
     left: 0;
     top: 0;
@@ -1256,7 +1256,7 @@ header {
 }
 
 .service-jog:hover:after {
-    background-image: url(../img/Banner-Yogya-Borobudur.jpg);
+    background-image: url(../properties/client/img/Banner-Yogya-Borobudur.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -1301,7 +1301,7 @@ header {
 
 .service-lop:after {
     content: "";
-    background-image: url(../img/Banner-Lombok-SelongBelanak.jpg);
+    background-image: url(../properties/client/img/Banner-Lombok-SelongBelanak.jpg);
     position: absolute;
     left: 0;
     top: 0;
@@ -1313,7 +1313,7 @@ header {
 }
 
 .service-lop:hover:after {
-    background-image: url(../img/Banner-Lombok-SelongBelanak.jpg);
+    background-image: url(../properties/client/img/Banner-Lombok-SelongBelanak.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
