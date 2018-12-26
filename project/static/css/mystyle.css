@@ -1188,7 +1188,7 @@ header {
 
 .service-dps:after {
     content: "";
-    background-image: url(../properties/client/img/Banner-Bali-Tampak-Siring.jpg);
+    background-image: url(../properties/client/img/Banner-Bali-Tampak-Siring-Jepunku.jpg);
     position: absolute;
     left: 0;
     top: 0;
@@ -1200,7 +1200,7 @@ header {
 }
 
 .service-dps:hover:after {
-    background-image: url(../properties/client/img/Banner-Bali-Tampak-Siring.jpg);
+    background-image: url(../properties/client/img/Banner-Bali-Tampak-Siring-Jepunku.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -1244,7 +1244,7 @@ header {
 
 .service-jog:after {
     content: "";
-    background-image: url(../properties/client/img/Banner-Yogya-Borobudur.jpg);
+    background-image: url(../properties/client/img/Banner-Yogya-Borobudur-Jepunku.jpg);
     position: absolute;
     left: 0;
     top: 0;
@@ -1256,7 +1256,7 @@ header {
 }
 
 .service-jog:hover:after {
-    background-image: url(../properties/client/img/Banner-Yogya-Borobudur.jpg);
+    background-image: url(../properties/client/img/Banner-Yogya-Borobudur-Jepunku.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -1301,7 +1301,7 @@ header {
 
 .service-lop:after {
     content: "";
-    background-image: url(../properties/client/img/Banner-Lombok-SelongBelanak.jpg);
+    background-image: url(../properties/client/img/Banner-Lombok-SelongBelanak-Jepunku.jpg);
     position: absolute;
     left: 0;
     top: 0;
@@ -1313,7 +1313,7 @@ header {
 }
 
 .service-lop:hover:after {
-    background-image: url(../properties/client/img/Banner-Lombok-SelongBelanak.jpg);
+    background-image: url(../properties/client/img/Banner-Lombok-SelongBelanak-Jepunku.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
