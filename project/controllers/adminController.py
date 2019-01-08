@@ -8,14 +8,14 @@ from passlib.hash import sha256_crypt
 
 @app.route('/admin')
 def adminDashboard():
-    return render_template('admin/adminIndex.html')
+    return render_template('/admin/adminIndex.html')
 
 @app.route('/admin/login')
 def adminLoginForm():
-    return render_template('admin/adminLogin.html')
+    return render_template('/admin/adminLogin.html')
 
 
-class RegisterFrom():
+class RegisterForm(Form):
     name = StringField('Name', [validators.Length(min=1, max=50)])
     username = StringField('Username', [validators.Length(min=4, max=25)])
     email = StringField('Email', [validators.Length(min=6, max=50)])
@@ -25,7 +25,7 @@ class RegisterFrom():
     ])
     confirm = PasswordField('Confirm Password')
 
-@app.route('admin/register', methods=['GET', 'POST'])
+@app.route('/admin/register', methods=['GET', 'POST'])
 def adminRegister():
     form = RegisterForm(request.form)
     if request.form == 'POST' and form.validate():
