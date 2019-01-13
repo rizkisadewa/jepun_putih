@@ -28,7 +28,7 @@ class RegisterForm(Form):
 @app.route('/admin/register', methods=['GET', 'POST'])
 def adminRegister():
     form = RegisterForm(request.form)
-    if request.form == 'POST' and form.validate():
+    if request.method == 'POST' and form.validate():
         return render_template('admin/adminRegister.html')
 
     return render_template('admin/adminRegister.html', form=form)

@@ -37,7 +37,7 @@
     <p class="login-box-msg">Please register the user in below form</p>
 
     {% from "admin/includes/_formhelpers.html" import render_field %}
-    <form action="" method="post">
+    <form method="POST" action="">
       <div class="form-group has-feedback">
         {{render_field(form.name, class_="form-control")}}
       </div>
@@ -58,11 +58,10 @@
         {{render_field(form.confirm, class_="form-control")}}
       </div>
 
-
       <div class="row">
         <!-- /.col -->
         <div class="col-xs-4">
-          <button type="submit" class="btn btn-primary btn-block btn-flat">Register</button>
+          <p> <input type="submit" class="btn btn-primary" value="Register"></p>
         </div>
         <!-- /.col -->
       </div>
@@ -81,7 +80,7 @@
 <!-- iCheck -->
 <!-- <script src="{{ url_for('static', filename='js/icheck.min.js') }}"></script> -->
 <script>
-  
+
 </script>
 </body>
 </html>
