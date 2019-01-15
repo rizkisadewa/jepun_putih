@@ -4,19 +4,22 @@ from flask import render_template, flash, redirect, url_for, session, request, l
 from flask_mysqldb import MySQL
 from wtforms import Form, StringField, TextAreaField, PasswordField, validators
 from passlib.hash import sha256_crypt
+from project.models.adminModels import adminModel
 
+# an object from Admin Models
+adminModel = adminModel()
 
 @app.route('/admin')
 def adminDashboard():
     return render_template('/admin/adminIndex.html')
 
 @app.route('/admin/login')
-def adminLoginForm():
+def adminLogin():
     return render_template('/admin/adminLogin.html')
 
 
 class RegisterForm(Form):
-    name = StringField('Name', [validators.Length(min=1, max=50)])
+    admin_name = StringField('Name', [validators.Length(min=1, max=50)])
     username = StringField('Username', [validators.Length(min=4, max=25)])
     email = StringField('Email', [validators.Length(min=6, max=50)])
     password = PasswordField('Password', [
@@ -29,6 +32,16 @@ class RegisterForm(Form):
 def adminRegister():
     form = RegisterForm(request.form)
     if request.method == 'POST' and form.validate():
-        return render_template('admin/adminRegister.html')
+        admin_name = form.admin_name.data
+        email = form.email.data
+        username = form.username.data
+        password = sha256_crypt.encrypt(str(form.password.data))
+
+        # implemntation of function Admin Register
+        adminModel.insertAdmin(admin_name, email, username, password)
+
+        flash('You are now registered and can log in', 'success')
+
+        return redirect(url_for('adminLogin'))
 
     return render_template('admin/adminRegister.html', form=form)
