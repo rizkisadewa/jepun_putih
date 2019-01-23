@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
 from project import app
 from flask import render_template, flash, redirect, url_for, session, request, logging #stuff from Flask
-from flask_mysqldb import MySQL
 from wtforms import Form, StringField, TextAreaField, PasswordField, validators
 from project.models.adminModels import adminModel
+from project import mysql
+from passlib.hash import sha256_crypt
 
 # an object from Admin Models
 adminModel = adminModel()
@@ -35,8 +36,8 @@ def adminRegister():
         username = form.username.data
         password = sha256_crypt.encrypt(str(form.password.data))
 
-        # implemntation of function Admin Register
-        adminModel.insertAdmin(admin_name, email, username, password)
+        # implemntation of function Admin Register from Admin Model
+        adminModel.registerAdmin(admin_name, email, username, password)
 
         flash('You are now registered and can log in', 'success')
 
@@ -52,7 +53,31 @@ def adminLogin():
         username = request.form['username']
         password_candidate = request.form['password']
 
-        if adminModel.getAdminLogin(username,password_candidate) == 1:
-            redirect(url_for('adminDashboard'))
+        # Create cursor
+        cur = mysql.connection.cursor()
 
+        #Get user by Username
+        result = cur.execute("SELECT * FROM admins WHERE username = %s", [username])
+
+        if result > 0:
+            # Get stored hash
+            data = cur.fetchone()
+            password = data['password']
+
+            # Compare Password
+            if sha256_crypt.verify(password_candidate, password):
+                # app.logger.info("PASSWORD MATCHED")
+                session['logged_in'] = True
+                session['username'] = username
+
+                flash('You are now logged in', 'success')
+                return redirect(url_for('adminDashboard'))
+            else:
+                error = 'Password is not correct'
+                return render_template('login.html', error=error)
+            # close the connection
+            cur.close()
+        else:
+            error = 'Username not found'
+            return render_template('login.html', error=error)
     return render_template('admin/adminLogin.html')
