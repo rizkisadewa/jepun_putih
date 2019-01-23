@@ -5,15 +5,10 @@ from wtforms import Form, StringField, TextAreaField, PasswordField, validators
 from project.models.adminModels import adminModel
 from project import mysql
 from passlib.hash import sha256_crypt
+from functools import wraps
 
 # an object from Admin Models
 adminModel = adminModel()
-
-# go to Admin Dashboard
-@app.route('/admin/dashboard')
-def adminDashboard():
-    return render_template('/admin/adminIndex.html')
-
 
 # Register Class
 class RegisterForm(Form):
@@ -81,3 +76,21 @@ def adminLogin():
             error = 'Username not found'
             return render_template('login.html', error=error)
     return render_template('admin/adminLogin.html')
+
+
+# Checking Login Status
+def is_logged_in(f):
+    @wraps(f)
+    def wrap(*args, **kwargs):
+        if 'logged_in' in session:
+            return f(*args, **kwargs)
+        else:
+            flash('Unauthorized, please login', 'danger')
+            return redirect(url_for('adminLogin'))
+    return wrap
+
+# go to Admin Dashboard
+@app.route('/admin/dashboard')
+@is_logged_in
+def adminDashboard():
+    return render_template('/admin/adminIndex.html')
