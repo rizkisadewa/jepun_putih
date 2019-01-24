@@ -77,10 +77,8 @@ def is_logged_in(f):
 # Logout
 @app.route('/admin/logout')
 @is_logged_in
-def logout():
-    session.clear() #clear the session
-    flash('You are now logged out', 'success')
-    return redirect(url_for('adminLogin'))
+def adminLogout():
+    return adminValidation.adminLogout()        
 
 # go to Admin Dashboard
 @app.route('/admin/dashboard')

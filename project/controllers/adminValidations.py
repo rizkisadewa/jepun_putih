@@ -34,3 +34,9 @@ class adminValidation(object):
             error = 'Username not found'
             flash('Username not found', 'danger')
             return render_template('admin/adminLogin.html', error=error)
+
+    # Admin Logout is only use for
+    def adminLogout(self):
+        session.clear() #clear the session
+        flash('You are now logged out', 'success')
+        return redirect(url_for('adminLogin'))
