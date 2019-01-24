@@ -57,10 +57,14 @@ def adminLogin():
         password_candidate = request.form['password']
         url = url_for('adminDashboard')
 
-        adminValidation.adminLogin(username, password_candidate, url)
+        if adminValidation.adminLogin(username, password_candidate) == True:
+            session['logged_in'] = True
+            session['username'] = username
+            return redirect(url_for('adminDashboard'))
+
     return render_template('admin/adminLogin.html')
 
-# Checking Login Status
+# Check if logged in
 def is_logged_in(f):
     @wraps(f)
     def wrap(*args, **kwargs):
@@ -68,7 +72,7 @@ def is_logged_in(f):
             return f(*args, **kwargs)
         else:
             flash('Unauthorized, please login', 'danger')
-            return redirect(url_for('adminLogin'))
+            return redirect(url_for('login'))
     return wrap
 
 # go to Admin Dashboard

@@ -8,7 +8,7 @@ from functools import wraps
 
 class adminValidation(object):
 
-    def adminLogin(self, username, password_candidate, url):
+    def adminLogin(self, username, password_candidate):
         # Create cursor
         cur = mysql.connection.cursor()
 
@@ -20,12 +20,9 @@ class adminValidation(object):
             data = cur.fetchone()
             password = data['password']
 
-            # Compare Password
+            # Compare Password, if correct will return true
             if sha256_crypt.verify(password_candidate, password):
-                session['logged_in'] = True
-                session['username'] = username
-                flash('You are now logged in', 'success')
-                return redirect(url)
+                return True
 
             else:
                 error = 'Password is not correct'
