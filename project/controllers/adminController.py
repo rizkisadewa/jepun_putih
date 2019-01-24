@@ -17,7 +17,6 @@ adminModel = adminModel()
 from project.controllers.adminValidations import adminValidation
 adminValidation = adminValidation()
 
-
 # Register Class
 class RegisterForm(Form):
     admin_name = StringField('Name', [validators.Length(min=1, max=50)])
@@ -72,8 +71,16 @@ def is_logged_in(f):
             return f(*args, **kwargs)
         else:
             flash('Unauthorized, please login', 'danger')
-            return redirect(url_for('login'))
+            return redirect(url_for('adminLogin'))
     return wrap
+
+# Logout
+@app.route('/admin/logout')
+@is_logged_in
+def logout():
+    session.clear() #clear the session
+    flash('You are now logged out', 'success')
+    return redirect(url_for('adminLogin'))
 
 # go to Admin Dashboard
 @app.route('/admin/dashboard')
