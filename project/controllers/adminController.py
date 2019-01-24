@@ -12,6 +12,12 @@ from project.models.adminModels import adminModel
 # an object from Admin Models
 adminModel = adminModel()
 
+
+#import from Admin Validation
+from project.controllers.adminValidations import adminValidation
+adminValidation = adminValidation()
+
+
 # Register Class
 class RegisterForm(Form):
     admin_name = StringField('Name', [validators.Length(min=1, max=50)])
@@ -49,37 +55,9 @@ def adminLogin():
         #Get form fields
         username = request.form['username']
         password_candidate = request.form['password']
+        url = url_for('adminDashboard')
 
-        # Create cursor
-        cur = mysql.connection.cursor()
-
-        #Get user by Username
-        result = cur.execute("SELECT * FROM admins WHERE username = %s", [username])
-
-        if result > 0:
-            # Get stored hash
-            data = cur.fetchone()
-            password = data['password']
-
-            # Compare Password
-            if sha256_crypt.verify(password_candidate, password):
-                # app.logger.info("PASSWORD MATCHED")
-                session['logged_in'] = True
-                session['username'] = username
-                flash('You are now logged in', 'success')
-                return redirect(url_for('adminDashboard'))
-
-            else:
-                error = 'Password is not correct'
-                flash('Password is not correct', 'danger')
-                return render_template('admin/adminLogin.html', error=error)
-                # close the connection
-                cur.close()
-        else:
-            error = 'Username not found'
-            flash('Username not found', 'danger')
-            return render_template('admin/adminLogin.html', error=error)
-
+        adminValidation.adminLogin(username, password_candidate, url)
     return render_template('admin/adminLogin.html')
 
 # Checking Login Status
