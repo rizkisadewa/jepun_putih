@@ -22,7 +22,6 @@ class adminValidation(object):
 
             # Compare Password
             if sha256_crypt.verify(password_candidate, password):
-                # app.logger.info("PASSWORD MATCHED")
                 session['logged_in'] = True
                 session['username'] = username
                 flash('You are now logged in', 'success')
