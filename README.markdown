@@ -1,15 +1,1 @@
-A simple boilerplate application following the MVC pattern using Flask micro python framework.
-It basically here to be my base skeleton for new python web applications
-
-Demo : jepunku.com
-
-Dependencies :
-
-	git clone git:
-	cd flask-mvc
-    	if you have old version of project: pip uninstall -r requirements.txt
-	pip install -r requirements.txt
-
-To run:
-
-    python runserver.py
+Still on progress, we update the backend program for www.jepunku.com so that the website more dynamic and can have the product, all the client can do transaction. 
